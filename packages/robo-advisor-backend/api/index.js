@@ -1,28 +1,31 @@
 require('dotenv').config();
-const express = require('express');
-const app = express();
-const path = require('path')
-const PORT = process.env.PORT || 4000;
-const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
+const mongoose = require('mongoose');
+const express = require('express');
+const path = require('path')
 const corsOptions = require('../config/corsOptions');
 const connectDB = require('../config/dbConnect');
-const mongoose = require('mongoose');
 
-console.log(process.env.NODE_ENV);
-connectDB();
 
+//app config
+const app = express();
+const PORT = process.env.PORT || 4000;
+
+//middleware
 app.use(cors(corsOptions));
 app.use(express.json()); // middleware to parse json
 app.use(cookieParser());
-
 // static route
+/* 
 app.use('/', express.static(path.join(__dirname, '/public')));
-app.use('/', require('../routes/root'));
-
+app.use('/', require('../routes/root')); 
 // user routes - for testing
-app.use('/test', require('../routes/testRoutes'));
+app.use('/test', require('../routes/testRoutes'));*/
 
+
+//db config
+connectDB();
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');
     app.listen(PORT, () => {
