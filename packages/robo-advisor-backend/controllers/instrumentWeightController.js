@@ -1,5 +1,5 @@
-const InstrumentWeight = require('../models/InstrumentWeight');
-const asyncHandler = require('express-async-handler');
+const InstrumentWeight = require("../models/InstrumentWeight");
+const asyncHandler = require("express-async-handler");
 
 const createInstrumentWeight = asyncHandler(async (req, res) => {
   const {
@@ -34,10 +34,20 @@ const createInstrumentWeight = asyncHandler(async (req, res) => {
   instrumentWeight.save();
 
   return await res.status(200).json({
-    article: await instrumentWeight.tocreateIWResponse(),
+    instrumentWeight: await instrumentWeight.tocreateIWResponse(),
   });
 });
 
+const getInstrumentWeight = asyncHandler(async (req, res) => {
+  InstrumentWeight.find((err, data) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(data);
+    }
+  });
+});
 module.exports = {
   createInstrumentWeight,
+  getInstrumentWeight,
 };
