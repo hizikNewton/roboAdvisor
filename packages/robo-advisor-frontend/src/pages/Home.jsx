@@ -1,6 +1,7 @@
 import BestService from 'src/partials/BestService';
 import Header from '../partials/Header';
 import HeroHome from '../partials/HeroHome';
+import WhyChooseUs from 'src/partials/WhyChooseUs';
 
 function Home() {
   return (
@@ -9,6 +10,7 @@ function Home() {
       <main className="flex-grow">
         <HeroHome />
         <BestService />
+        <WhyChooseUs/>
       </main>
     </div>
   );
