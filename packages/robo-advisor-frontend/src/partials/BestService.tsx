@@ -5,6 +5,7 @@ import { ReactComponent as BS1 } from '../assets/images/bestServices/bs1.svg';
 import { ReactComponent as BS2 } from '../assets/images/bestServices/bs2.svg';
 import { ReactComponent as BS3 } from '../assets/images/bestServices/bs3.svg';
 import Card from "src/components/Card";
+import Section from "src/components/Section";
 
 
 type Props = {};
@@ -25,17 +26,11 @@ const data = [{
 }]
 const BestService = (props: Props) => {
   return (
-    <section className="">
-
-      <div className="max-w-6xl px-4 mx-auto sm:px-6 flex items-center flex-col">
-        <div className=" text-center text-5xl font-bold mb-4">Our Best Services<br />For Your Convinience</div>
-        <div className="text-center text-base font-normal mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br />sed do eiusmod tempor incididunt ut labore et dolore magna.</div>
-        <Underline />
-        <div className="flex w-full justify-between mt-16">
-          {data.map(({ Icon, text, subtext }) => <Card Icon={Icon} text={text} subtext={subtext} />)}
-        </div>
+    <Section>
+      <div className="flex w-full justify-between mt-16">
+        {data.map(({ Icon, text, subtext }) => <Card Icon={Icon} text={text} subtext={subtext} />)}
       </div>
-    </section>
+    </Section>
   );
 };
 
