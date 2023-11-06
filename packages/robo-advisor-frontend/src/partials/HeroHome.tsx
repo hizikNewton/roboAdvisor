@@ -1,4 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
+
+import { ReactComponent as Cal } from '../assets/images/heroImage/cal.svg';
+import { ReactComponent as Expenses } from '../assets/images/heroImage/expense.svg';
+import { ReactComponent as Currency } from '../assets/images/heroImage/currency.svg';
+import { ReactComponent as Bal } from '../assets/images/heroImage/bal.svg';
+import { ReactComponent as User } from '../assets/images/heroImage/user.svg';
+import { ReactComponent as Stat } from '../assets/images/heroImage/stat.svg';
 
 function HeroHome() {
   return (
@@ -84,6 +90,18 @@ function HeroHome() {
           </div>
 
           {/* Hero image */}
+          <div className='flex items-center gap-6'>
+            <Cal />
+            <div className="flex flex-col">
+              <Expenses />
+              <Currency />
+            </div>
+            <div className="flex flex-col">
+              <Bal />
+              <Stat />
+            </div>
+            <User />
+          </div>
         </div>
       </div>
     </section>
