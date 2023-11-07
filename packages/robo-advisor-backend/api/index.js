@@ -19,6 +19,7 @@ app.use(cookieParser());
 app.use('/test', require('../routes/testRoute'));
 app.use('/api', require('../routes/instrumentWeightRoute'));
 
+mongoose.set('strictQuery', false);
 //db config
 connectDB();
 mongoose.connection.once('open', () => {

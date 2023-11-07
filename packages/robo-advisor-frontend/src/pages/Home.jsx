@@ -1,7 +1,8 @@
-import BestService from 'src/partials/BestService';
+import BestService from 'partials/BestService';
 import Header from '../partials/Header';
 import HeroHome from '../partials/HeroHome';
-import WhyChooseUs from 'src/partials/WhyChooseUs';
+import WhyChooseUs from 'partials/WhyChooseUs';
+import RiskFeature from 'partials/RiskFeature';
 
 function Home() {
   return (
@@ -10,7 +11,8 @@ function Home() {
       <main className="flex-grow">
         <HeroHome />
         <BestService />
-        <WhyChooseUs/>
+        <WhyChooseUs />
+        <RiskFeature />
       </main>
     </div>
   );
