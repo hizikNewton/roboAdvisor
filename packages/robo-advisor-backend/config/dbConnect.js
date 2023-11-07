@@ -1,8 +1,18 @@
 const mongoose = require('mongoose');
-
+const dotenv = require('dotenv');
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_CONNECTION_STRING);
+    const env = dotenv.config({ path: `.env.local`, override: true });
+    console.log(env);
+    mongoose
+      .connect(env.parsed.MONGODB_CONNECTION_STRING, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      })
+      .then(() => {
+        const db = mongoose.connection;
+        db.on('error', (err) => console.log('erorrrr', err));
+      });
   } catch (err) {
     console.log(err);
   }
