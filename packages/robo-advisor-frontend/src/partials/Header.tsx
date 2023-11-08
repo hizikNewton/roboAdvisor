@@ -15,9 +15,8 @@ function Header() {
 
   return (
     <header
-      className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${
-        !top && "bg-white backdrop-blur-sm shadow-lg"
-      }`}
+      className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${!top && "bg-white backdrop-blur-sm shadow-lg"
+        }`}
     >
       <div className="max-w-6xl px-5 mx-auto sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -46,12 +45,12 @@ function Header() {
           </nav>
 
           <div>
-            <a
+            <button
               className="w-full mb-4 text-white bg-blue-600 btn hover:bg-blue-700"
-              href="#0"
+
             >
               Download the App
-            </a>
+            </button>
           </div>
         </div>
       </div>
