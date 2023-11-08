@@ -1,5 +1,4 @@
-import SvgRiskprofile from '../assets/images/Riskprofile';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import {
   Chart as ChartJS,
@@ -14,12 +13,11 @@ import {
   BarController,
 } from 'chart.js';
 import { Chart } from 'react-chartjs-2';
-import { faker } from '@faker-js/faker';
 import Section from 'components/Section';
 import makeRequest from 'utils/api';
-import Risk from './Risk';
-
-type Props = {};
+import SvgRiskprofile from 'assets/images/Riskprofile';
+import { RiskScoreData } from 'utils/data';
+import TextCard from 'components/TextCard';
 
 ChartJS.register(
   LinearScale,
@@ -33,9 +31,11 @@ ChartJS.register(
   BarController
 );
 
-const RiskFeature = (props: Props) => {
+const RiskFeature = () => {
   const [data, setData] = useState([{}]);
+  const [selected,setSelected] = useState(5)
   const [{ _id, __v, createdAt, updatedAt, ...graphData }] = data;
+  const {score,title,para1,para2} = RiskScoreData[selected-1]
   const graph = {
     labels: Object.keys(graphData),
     datasets: [
@@ -60,20 +60,19 @@ const RiskFeature = (props: Props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await makeRequest('get', 'instrument-weight?score=8');
+        const data = await makeRequest('get', `instrument-weight?score=${selected}`);
         setData(data);
       } catch (error) {
         console.error(error);
       }
     };
     fetchData();
-  }, []);
+  }, [selected]);
   return (
     <Section>
       <div className="flex w-full">
         <div className="w-[50%]">
-          {/* <SvgRiskprofile /> */}
-          <Risk />
+           <SvgRiskprofile setSelected={setSelected} /> 
         </div>
         <div className="w-[50%]">
           <Chart type="bar" data={graph} />
@@ -82,6 +81,8 @@ const RiskFeature = (props: Props) => {
               Try with your dataset
             </button>
           </div>
+          <div>{score}</div>
+          <TextCard title={title} para1={para1} para2={para2} />
         </div>
       </div>
     </Section>
