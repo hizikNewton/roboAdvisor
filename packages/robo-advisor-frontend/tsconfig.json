@@ -15,9 +15,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "paths": {
-      "@images/*": ["src/assets/images/*"]
+      "@images/*": ["./assets/images/*"]
     }
   },
   "include": ["src", "tailwind.config.js"]

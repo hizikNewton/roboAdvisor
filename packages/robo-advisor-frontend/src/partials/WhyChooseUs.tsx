@@ -1,4 +1,4 @@
-import Section from "src/components/Section";
+import Section from "components/Section";
 import { ReactComponent as Line1 } from "../assets/images/Vector1.svg";
 import { ReactComponent as Line2 } from "../assets/images/Vector2.svg";
 import { ReactComponent as Line3 } from "../assets/images/Vector3.svg";

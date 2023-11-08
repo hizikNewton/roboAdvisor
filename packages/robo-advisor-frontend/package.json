@@ -3,22 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@faker-js/faker": "^8.2.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-regular-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "axios": "^1.6.0",
+    "chart.js": "^4.4.0",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.18.0",
-    "react-script": "^2.0.5",
     "react-scripts": "^5.0.1",
     "tailwindcss": "^3.3.5",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "typescript": "^4.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "icons": "npx @svgr/cli -- ./assets/images/riskprofile.svg --out-dir ./assets/images/riskprofile.jsx "
- 
+    "transform-svg": "npx @svgr/cli --typescript -d ./src/assets/images ./src/assets/images/riskprofile.svg"
   },
   "eslintConfig": {
     "extends": [

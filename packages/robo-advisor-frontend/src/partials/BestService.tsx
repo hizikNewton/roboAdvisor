@@ -1,8 +1,8 @@
 import { ReactComponent as BS1 } from "../assets/images/bestServices/bs1.svg";
 import { ReactComponent as BS2 } from "../assets/images/bestServices/bs2.svg";
 import { ReactComponent as BS3 } from "../assets/images/bestServices/bs3.svg";
-import Card from "src/components/Card";
-import Section from "src/components/Section";
+import Card from "components/Card";
+import Section from "components/Section";
 
 type Props = {};
 
