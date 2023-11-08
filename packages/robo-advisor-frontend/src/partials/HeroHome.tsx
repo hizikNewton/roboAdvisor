@@ -1,44 +1,14 @@
-
-import { ReactComponent as Cal } from '../assets/images/heroImage/cal.svg';
-import { ReactComponent as Expenses } from '../assets/images/heroImage/expense.svg';
-import { ReactComponent as Currency } from '../assets/images/heroImage/currency.svg';
-import { ReactComponent as Bal } from '../assets/images/heroImage/bal.svg';
-import { ReactComponent as User } from '../assets/images/heroImage/user.svg';
-import { ReactComponent as Stat } from '../assets/images/heroImage/stat.svg';
+import { ReactComponent as Cal } from "../assets/images/heroImage/cal.svg";
+import { ReactComponent as Expenses } from "../assets/images/heroImage/expense.svg";
+import { ReactComponent as Currency } from "../assets/images/heroImage/currency.svg";
+import { ReactComponent as Bal } from "../assets/images/heroImage/bal.svg";
+import { ReactComponent as User } from "../assets/images/heroImage/user.svg";
+import { ReactComponent as Stat } from "../assets/images/heroImage/stat.svg";
 
 function HeroHome() {
   return (
     <section className="relative">
       {/* Illustration behind hero content */}
-      <div
-        className="absolute bottom-0 transform -translate-x-1/2 pointer-events-none left-1/2"
-        aria-hidden="true"
-      >
-        <svg
-          width="1360"
-          height="578"
-          viewBox="0 0 1360 578"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <linearGradient
-              x1="50%"
-              y1="0%"
-              x2="50%"
-              y2="100%"
-              id="illustration-01"
-            >
-              <stop stopColor="#FFF" offset="0%" />
-              <stop stopColor="#EAEAEA" offset="77.402%" />
-              <stop stopColor="#DFDFDF" offset="100%" />
-            </linearGradient>
-          </defs>
-          <g fill="url(#illustration-01)" fillRule="evenodd">
-            <circle cx="1232" cy="128" r="128" />
-            <circle cx="155" cy="443" r="64" />
-          </g>
-        </svg>
-      </div>
 
       <div className="max-w-6xl px-4 mx-auto sm:px-6">
         {/* Hero content */}
@@ -90,7 +60,7 @@ function HeroHome() {
           </div>
 
           {/* Hero image */}
-          <div className='flex items-center gap-6'>
+          <div className="flex items-center gap-6">
             <Cal />
             <div className="flex flex-col">
               <Expenses />

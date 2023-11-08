@@ -28,8 +28,12 @@ const data = [
 ];
 const BestService = (props: Props) => {
   return (
-    <Section>
-      <div className="flex w-full justify-between mt-16">
+    <Section className="relative">
+      <div
+        className="absolute bottom-0 transform -translate-x-1/2 pointer-events-none left-1/2"
+        aria-hidden="true"
+      ></div>
+      <div className="flex justify-between w-full mt-16">
         {data.map(({ Icon, text, subtext }) => (
           <Card Icon={Icon} text={text} subtext={subtext} />
         ))}
