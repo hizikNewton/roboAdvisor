@@ -10,7 +10,7 @@ interface Props {
 const Button: FC<Props> = ({ type = "button", handleSubmit, text, clx }) => {
     return (
         <button
-            className={`w-full mb-4 text-white bg-[#2FB574] p-3 rounded-lg btn  ${clx}`}
+            className={`w-full text-white bg-[#2FB574] p-3 rounded-lg btn  ${clx}`}
             type={type}
             onClick={handleSubmit}
         >

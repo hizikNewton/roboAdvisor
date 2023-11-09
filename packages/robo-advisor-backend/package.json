@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node server",
     "dev": "nodemon server",
-    "startDatabase": "cd C:/Program Files/MongoDB/Server/7.0/bin && mongod.exe"
+    "startWinDatabase": "cd C:/Program Files/MongoDB/Server/7.0/bin && mongod.exe"
   },
   "dependencies": {
     "cookie-parser": "^1.4.6",

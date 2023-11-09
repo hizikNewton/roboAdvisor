@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/aos": "^3.0.7",
+    "aos": "^2.3.4",
     "axios": "^1.6.0",
     "chart.js": "^4.4.0",
     "react": "^18.2.0",

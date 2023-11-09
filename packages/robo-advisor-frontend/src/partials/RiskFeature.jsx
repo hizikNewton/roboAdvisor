@@ -18,7 +18,6 @@ import makeRequest from 'utils/api';
 import SvgRiskprofile from 'assets/images/Riskprofile';
 import { RiskScoreData } from 'utils/data';
 import TextCard from 'components/TextCard';
-import Button from 'components/Button';
 
 ChartJS.register(
   LinearScale,
@@ -33,13 +32,15 @@ ChartJS.register(
 );
 
 const RiskFeature = () => {
-  const [data, setData] = useState([{}]);
+  const [data, setData] = useState([
+    { _id: '', __v: '', createdAt: '', updatedAt: '' },
+  ]);
   const [openToast, setOpenToast] = useState(false);
-  const [selected, setSelected] = useState(5);
+  const { _id, __v, createdAt, updatedAt, riskScore, ...graphData } = data[0];
+  const [selected, setSelected] = useState();
   const [file, setFile] = useState();
 
-  const [{ _id, __v, createdAt, updatedAt, ...graphData }] = data;
-  const textData = RiskScoreData[selected - 1];
+  const textData = selected && RiskScoreData[selected - 1];
   const graph = {
     labels: Object.keys(graphData),
     datasets: [
@@ -65,14 +66,15 @@ const RiskFeature = () => {
     if (openToast) {
       setTimeout(() => {
         setOpenToast(false);
-      }, 5000);
+      }, 3000);
     }
+    console.log(data);
     const fetchData = async () => {
+      const url = selected
+        ? `instrument-weight?score=${selected}`
+        : 'instrument-weight';
       try {
-        const data = await makeRequest(
-          'get',
-          `instrument-weight?score=${selected}`
-        );
+        const data = await makeRequest('get', url);
         setData(data);
       } catch (error) {
         console.error(error);
@@ -129,16 +131,17 @@ const RiskFeature = () => {
                 />
               </label>
               {file && (
-                <Button
-                  text="submit"
-                  clx="w-fit"
+                <button
+                  className={` w-fit text-white bg-[#2FB574] p-3 rounded-lg btn  `}
                   type="submit"
-                  handleSubmit={(e) => handleSubmit(e)}
-                />
+                  onClick={handleSubmit}
+                >
+                  Submit
+                </button>
               )}
             </div>
 
-            <TextCard data={textData} />
+            {selected && <TextCard data={textData} />}
           </div>
         </div>
       </Section>

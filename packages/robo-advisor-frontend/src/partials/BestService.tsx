@@ -29,9 +29,10 @@ const data = [
 const BestService = (props: Props) => {
   return (
     <Section className="relative">
-      <div className="flex justify-between w-full mt-16">
+      <div className="flex justify-between w-full mt-16" data-aos="fade-up"
+        data-aos-delay="50">
         {data.map(({ Icon, text, subtext }) => (
-          <Card Icon={Icon} text={text} subtext={subtext} />
+          <Card Icon={Icon} text={text} subtext={subtext} transition="flip-right" />
         ))}
       </div>
     </Section>

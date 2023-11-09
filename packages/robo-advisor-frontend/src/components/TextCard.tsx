@@ -13,7 +13,7 @@ interface Props {
 
 
 const TextCard: FC<Props> = ({ data }) => {
-  const { score, color, title, para1, para2 } = data
+  const { score, color, title, para1, para2 } = data || {}
   return (
     <div className="w-[480px] h-fit">
       <article className="information rounded-2xl shadow p-6 backdrop-blur-lg">
@@ -22,13 +22,15 @@ const TextCard: FC<Props> = ({ data }) => {
         <p className="info my-4">{para1}</p>
 
         <p className="info">{para2}</p>
-        <button className="btn border-2 mt-2 border-green-200 rounded flex p-3">
-          <span>Learn more</span>
-          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
-            <path d="M0 0h24v24H0V0z" fill="none" />
-            <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4v3z" fill="currentColor" />
-          </svg>
-        </button>
+        <div className="flex w-full justify-end">
+          <button className="btn border-2 mt-2 border-green-600 rounded flex p-3 ">
+            <span>Learn more</span>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+              <path d="M0 0h24v24H0V0z" fill="none" />
+              <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4v3z" fill="currentColor" />
+            </svg>
+          </button>
+        </div>
       </article>
     </div>
   );

@@ -18,6 +18,7 @@ const WhyChooseUs = (props: Props) => {
           <Card
             Icon={Menu}
             text="Lots Choices"
+            transition="zoom-in-up"
             subtext="There are various types of investments available and you can choose investments"
           />
         </div>
@@ -28,6 +29,7 @@ const WhyChooseUs = (props: Props) => {
           <Card
             Icon={Wallet}
             text="Minimal Risk"
+            transition="zoom-in-up"
             subtext="Interest rate risk in the risk that arises because the relative value"
           />
         </div>
@@ -40,12 +42,14 @@ const WhyChooseUs = (props: Props) => {
         <Card
           Icon={Chart}
           text="High Profit"
+          transition="zoom-in-down"
           subtext="The money or assets will gradually grow or increase in value within a certain period"
         />
         <div className="row-span-2">
           <Card
             Icon={Judge}
             text="Legal"
+            transition="zoom-in-down"
             subtext="Our platform has been verified and supervised by related institutions"
           />
         </div>
