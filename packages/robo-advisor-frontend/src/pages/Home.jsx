@@ -3,6 +3,7 @@ import Header from '../partials/Header';
 import HeroHome from '../partials/HeroHome';
 import WhyChooseUs from 'partials/WhyChooseUs';
 import RiskFeature from 'partials/RiskFeature';
+import Footer from 'partials/Footer';
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
         <BestService />
         <WhyChooseUs />
         <RiskFeature />
+        <Footer />
       </main>
     </div>
   );

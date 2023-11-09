@@ -4,6 +4,7 @@ import { ReactComponent as Currency } from "../assets/images/heroImage/currency.
 import { ReactComponent as Bal } from "../assets/images/heroImage/bal.svg";
 import { ReactComponent as User } from "../assets/images/heroImage/user.svg";
 import { ReactComponent as Stat } from "../assets/images/heroImage/stat.svg";
+import Button from "components/Button";
 
 function HeroHome() {
   return (
@@ -12,14 +13,14 @@ function HeroHome() {
 
       <div className="max-w-6xl px-4 mx-auto sm:px-6">
         {/* Hero content */}
-        <div className="pt-32 pb-12 md:pt-40 md:pb-20">
+        <div className="pt-20 pb-12 md:pt-40 md:pb-20">
           {/* Section header */}
-          <div className="pb-12 text-center md:pb-16">
+          <div className="pb-12 text-center md:pb-16 ">
             <h1
-              className="mb-4 text-5xl font-extrabold tracking-tighter md:text-6xl leading-tighter"
+              className="mb-4 text-5xl font-extrabold tracking-tighter text-center md:text-6xl leading-tighter"
               data-aos="zoom-y-out"
             >
-              We make it easy for{" "}
+              We make it easy for<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400">
                 everyone to invest
               </span>
@@ -40,20 +41,10 @@ function HeroHome() {
                 data-aos-delay="300"
               >
                 <div>
-                  <a
-                    className="w-full mb-4 text-white bg-blue-600 btn hover:bg-blue-700 sm:w-auto sm:mb-0"
-                    href="#0"
-                  >
-                    Get Started
-                  </a>
+                  <Button text="Get Started" />
                 </div>
-                <div>
-                  <a
-                    className="w-full text-white bg-gray-900 btn hover:bg-gray-800 sm:w-auto sm:ml-4"
-                    href="#0"
-                  >
-                    Watch Video
-                  </a>
+                <div >
+                  <Button text="Watch Video" clx="text-green-500 bg-white" />
                 </div>
               </div>
             </div>
@@ -62,11 +53,11 @@ function HeroHome() {
           {/* Hero image */}
           <div className="flex items-center gap-6">
             <Cal />
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-y-6">
               <Expenses />
               <Currency />
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-y-6">
               <Bal />
               <Stat />
             </div>

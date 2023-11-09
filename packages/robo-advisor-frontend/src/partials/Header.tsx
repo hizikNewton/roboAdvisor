@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import { ReactComponent as Logo } from "../assets/images/logo.svg";
+
 function Header() {
   const [top, setTop] = useState(true);
   const nav = ["Home", "Service", "Feature", "Payment"];
@@ -24,7 +26,7 @@ function Header() {
           <div className="flex-shrink-0 mr-4">
             {/* Logo */}
             <Link to="/" className="block">
-              Logo
+              <Logo />
             </Link>
           </div>
 
@@ -46,7 +48,7 @@ function Header() {
 
           <div>
             <button
-              className="w-full mb-4 text-white bg-blue-600 btn hover:bg-blue-700"
+              className="w-full mb-4 text-white bg-[#2FB574] p-3 rounded-lg btn hover:bg-[#D8FCEC]"
 
             >
               Download the App

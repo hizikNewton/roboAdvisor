@@ -12,14 +12,16 @@ type Props = {};
 
 const WhyChooseUs = (props: Props) => {
   return (
-    <Section className="bg-green-600">
-      <div className="grid items-center grid-cols-3 grid-rows-3 justify-items-center">
-        <Card
-          Icon={Menu}
-          text="Lots Choices"
-          subtext="There are various types of investments available and you can choose investments"
-        />
-        <div className="row-span-3 h-[500px] col-start-2 col-end-3">
+    <Section className="bg-[#d8fcec]" title="These are why you should use Roboservice">
+      <div className="grid items-center grid-cols-3 grid-rows-4 justify-items-center">
+        <div className="row-span-2">
+          <Card
+            Icon={Menu}
+            text="Lots Choices"
+            subtext="There are various types of investments available and you can choose investments"
+          />
+        </div>
+        <div className="row-span-4  col-start-2 col-end-3">
           <Line1 />
         </div>
         <div className="">
@@ -40,11 +42,13 @@ const WhyChooseUs = (props: Props) => {
           text="High Profit"
           subtext="The money or assets will gradually grow or increase in value within a certain period"
         />
-        <Card
-          Icon={Judge}
-          text="Legal"
-          subtext="Our platform has been verified and supervised by related institutions"
-        />
+        <div className="row-span-2">
+          <Card
+            Icon={Judge}
+            text="Legal"
+            subtext="Our platform has been verified and supervised by related institutions"
+          />
+        </div>
       </div>
     </Section>
   );

@@ -4,27 +4,27 @@ import { ReactComponent as Underline } from "../assets/images/bestServices/under
 
 interface Props {
   className?: string;
+  title?: string
 }
 
 const Section = ({
+  title,
   children,
   className: classes,
 }: PropsWithChildren<Props>) => {
   return (
-    <section>
+    <section className="">
       <div
-        className={`flex flex-col items-center max-w-6xl px-4 mx-auto mb-20 sm:px-6 ${classes}`}
+        className={`flex flex-col items-center max-w-6xl  pt-6 px-4 mx-auto mb-20 sm:px-6 ${classes}`}
       >
-        <div className="mb-4 text-5xl font-bold text-center ">
-          Our Best Services
-          <br />
-          For Your Convinience
+        <div className="mb-4 text-5xl w-[500px] font-bold text-center ">
+          {title ?? `Our Best Services for Your Convinience`}
         </div>
         <div className="mb-8 text-base font-normal text-center">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br />
           sed do eiusmod tempor incididunt ut labore et dolore magna.
         </div>
-        <Underline />
+        <Underline className="mb-12" />
         {children}
       </div>
     </section>
