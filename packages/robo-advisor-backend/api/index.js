@@ -16,7 +16,6 @@ app.use(cors(corsOptions));
 app.use(express.json()); // middleware to parse json
 app.use(cookieParser());
 
-app.use('/test', require('../routes/testRoute'));
 app.use('/api', require('../routes/instrumentWeightRoute'));
 
 mongoose.set('strictQuery', false);
