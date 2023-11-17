@@ -18,7 +18,7 @@ const Section = ({
         className={`flex flex-col items-center max-w-6xl  pt-6 px-4 mx-auto mb-20 sm:px-6 ${classes}`}
       >
         <div className="mb-4 text-5xl w-[500px] font-bold text-center ">
-          {title ?? `Our Best Services for Your Convinience`}
+          {title ?? `Our Best Services for Your Convenience`}
         </div>
         <div className="mb-8 text-base font-normal text-center">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br />

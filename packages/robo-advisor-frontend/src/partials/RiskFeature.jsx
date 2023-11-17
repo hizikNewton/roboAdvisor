@@ -123,7 +123,7 @@ const RiskFeature = () => {
           </div>
         </button>
       )}
-      <Section title="RoboAdvisor feature for Your Convinience">
+      <Section title="RoboAdvisor feature for Your Convenience">
         <div className="flex w-full items-center ">
           <div className="w-[50%] h-full">
             <SvgRiskprofile setSelected={setSelected} />
