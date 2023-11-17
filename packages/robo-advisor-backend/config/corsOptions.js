@@ -22,4 +22,4 @@ var corsOption = function (req, callback) {
   callback(null, corsOptions); // callback expects two parameters: error and options
 };
 
-module.exports = corsOptions;
+module.exports = corsOption;
