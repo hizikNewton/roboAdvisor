@@ -1,6 +1,6 @@
 const allowedOrigins = require('./allowedOrigins');
 
-/* const corsOptions = {
+const corsOptions = {
   origin: (origin, callback) => {
     if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
@@ -10,8 +10,8 @@ const allowedOrigins = require('./allowedOrigins');
   },
   credentials: true,
   optionsSuccessStatus: 200,
-}; */
-
+}; 
+/* 
 var corsOption = function (req, callback) {
   var corsOptions;
   if (allowedOrigins.indexOf(req.header('Origin')) !== -1) {
@@ -21,5 +21,5 @@ var corsOption = function (req, callback) {
   }
   callback(null, corsOptions); // callback expects two parameters: error and options
 };
-
-module.exports = corsOption;
+*/
+module.exports = corsOptions;
