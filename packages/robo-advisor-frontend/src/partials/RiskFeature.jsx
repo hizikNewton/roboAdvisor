@@ -18,6 +18,7 @@ import makeRequest from 'utils/api';
 import SvgRiskprofile from 'assets/images/Riskprofile';
 import { RiskScoreData } from 'utils/data';
 import TextCard from 'components/TextCard';
+import Spinner from 'assets/images/Spinner';
 
 ChartJS.register(
   LinearScale,
@@ -39,6 +40,7 @@ const RiskFeature = () => {
   const { _id, __v, createdAt, updatedAt, riskScore, ...graphData } = data[0];
   const [selected, setSelected] = useState();
   const [file, setFile] = useState();
+  const [loading, setLoading] = useState(false);
 
   const textData = selected && RiskScoreData[selected - 1];
   const graph = {
@@ -68,7 +70,6 @@ const RiskFeature = () => {
         setOpenToast(false);
       }, 3000);
     }
-    console.log(data);
     const fetchData = async () => {
       const url = selected
         ? `instrument-weight?score=${selected}`
@@ -97,9 +98,17 @@ const RiskFeature = () => {
         'content-type': 'multipart/form-data',
       },
     };
-    makeRequest('post', 'bulk-load', formData, config).then((response) => {
-      setOpenToast(true);
-    });
+    setLoading(true);
+    makeRequest('post', 'bulk-load', formData, config)
+      .then((response) => {
+        setOpenToast(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }
   return (
     <>
@@ -137,6 +146,11 @@ const RiskFeature = () => {
                   onClick={handleSubmit}
                 >
                   Submit
+                  {loading && (
+                    <span>
+                      <Spinner />
+                    </span>
+                  )}
                 </button>
               )}
             </div>
